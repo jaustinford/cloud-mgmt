@@ -19,10 +19,10 @@ terraform_apply:
 playbook_site:
   stage: trigger
   variables:
-    ELISE_CI_DOCKER_IMAGE: $ELISE_CI_NEXUS_DOCKER_HOSTED/elise/iac-configure:$CI_COMMIT_REF_SLUG
+    ELISE_CI_DOCKER_IMAGE: $ELISE_CI_NEXUS_DOCKER_HOSTED/elise/host-mgmt:$CI_COMMIT_REF_SLUG
   needs:
     - job: terraform_apply
       optional: false
   trigger:
     strategy: depend
-    project: elise/infrastructure/iac-configure
+    project: elise/iac/host-mgmt

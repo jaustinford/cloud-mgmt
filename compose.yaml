@@ -6,7 +6,7 @@ services:
   ###########################################################
 
   run:
-    image: docker-hosted.proxy-int.pendragonlab.com/elise/iac-deploy:main
+    image: docker-hosted.proxy-int.pendragonlab.com/elise/cloud-mgmt:main
     entrypoint: terraform -chdir=/terraform/environment ${TERRAFORM_ARGS}
 
     environment:
@@ -34,7 +34,7 @@ services:
         read_only: false
 
     networks:
-      - iac_deploy
+      - cloud_mgmt
 
     logging:
       options:
@@ -60,5 +60,5 @@ volumes:
       device: //${RAIDVOL_GREEN_SHARE_HOST}/${RAIDVOL_GREEN_SHARE_NAME}
 
 networks:
-  iac_deploy:
-    name: iac_deploy
+  cloud_mgmt:
+    name: cloud_mgmt

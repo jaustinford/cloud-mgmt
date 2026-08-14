@@ -1,6 +1,6 @@
-# iac-deploy
+# cloud-mgmt
 
-Manage Terraform resources with a single pipeline. 
+Manage Terraform resources with a single pipeline.
 
 ## pipelines
 
