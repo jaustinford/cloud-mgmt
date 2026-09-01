@@ -1,12 +1,10 @@
 ---
 services:
-
-  ###########################################################
-  # run
-  ###########################################################
-
   run:
     image: docker-hosted.proxy-int.pendragonlab.com/elise/cloud-mgmt:main
+    build:
+      context: .
+
     entrypoint: terraform -chdir=/terraform/environment ${TERRAFORM_ARGS}
 
     environment:
@@ -40,10 +38,6 @@ services:
       options:
         max-size: 10m
         max-file: '10'
-
-###########################################################
-# resources
-###########################################################
 
 volumes:
   raidvol_green_share:
