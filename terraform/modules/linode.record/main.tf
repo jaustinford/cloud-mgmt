@@ -4,7 +4,7 @@
 
 resource "linode_domain_record" "domain_records" {
   for_each = {
-    for domain_record in var.domain_records : domain_record.name => {
+    for domain_record in var.domain_records : "${domain_record.record_type}-${domain_record.name}" => {
       record_type = domain_record.record_type
       name        = domain_record.name
       target      = domain_record.target

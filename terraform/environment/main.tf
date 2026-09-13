@@ -122,6 +122,11 @@ module "record_portal" {
       record_type = "A"
       name        = ""
       target      = module.instance_portal.instance_ip_address[0]
+    },
+    {
+      record_type = "TXT"
+      name        = ""
+      target      = "google-site-verification=2a3OHklmtwNJSm7y-ALZz7IkAIFV0QH1Asqvt_N-BwE"
     }
   ]
 
